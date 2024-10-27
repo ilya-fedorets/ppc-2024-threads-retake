@@ -30,10 +30,10 @@ double fedorets_i_simpson_omp::getSimpson(std::function<double(std::vector<doubl
     }
     std::vector<double> point;
     for (int ii = 0; ii < pow(6, dim); ++ii) {
-      int temp = ii;
+      int tempp = ii;
       for (int j = 0; j < dim; ++j) {
-        point.push_back(params[j][temp % 6]);
-        temp /= 6;
+        point.push_back(params[j][tempp % 6]);
+        tempp /= 6;
       }
       result += (*f)(point);
       point.clear();
@@ -73,10 +73,10 @@ double getOMPSimpson(std::function<double(std::vector<double>)>* f, std::vector<
     }
     std::vector<double> point;
     for (int ii = 0; ii < pow(6, dim); ++ii) {
-      int temp = ii;
+      int tempp = ii;
       for (int j = 0; j < dim; ++j) {
-        point.push_back(params[j][temp % 6]);
-        temp /= 6;
+        point.push_back(params[j][tempp % 6]);
+        tempp /= 6;
       }
       result += (*f)(point);
       point.clear();
