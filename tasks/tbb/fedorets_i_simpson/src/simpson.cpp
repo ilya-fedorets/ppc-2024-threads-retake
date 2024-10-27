@@ -86,7 +86,7 @@ double fedorets_i_simpson_tbb::getTBBSimpson(std::function<double(std::vector<do
 
         return local_result;
       },
-      std::plus<double>());
+      std::plus<>());
 
   for (int i = 0; i < dim; ++i) {
     result *= h[i] / 6.0;
