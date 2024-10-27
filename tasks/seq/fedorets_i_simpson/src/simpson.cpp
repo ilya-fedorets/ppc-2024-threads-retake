@@ -29,8 +29,8 @@ double fedorets_i_simpson_seq::getSimpson(std::function<double(std::vector<doubl
       temp /= (*n)[j];
     }
     std::vector<double> point;
-    for (int i = 0; i < pow(6, dim); ++i) {
-      int temp = i;
+    for (int ii = 0; ii < pow(6, dim); ++ii) {
+      int temp = ii;
       for (int j = 0; j < dim; ++j) {
         point.push_back(params[j][temp % 6]);
         temp /= 6;
