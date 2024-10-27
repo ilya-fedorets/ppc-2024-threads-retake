@@ -25,11 +25,11 @@ TEST(fedorets_i_simpson_seq, Func_1) {
 
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
 
   taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(out.data()));
@@ -42,10 +42,6 @@ TEST(fedorets_i_simpson_seq, Func_1) {
   taskSequential.run();
   taskSequential.post_processing();
   ASSERT_NEAR(294, out[0], 0.1);
-
-  delete reinterpret_cast<std::function<double(std::vector<double>)> *>(taskDataSeq->inputs[0]);
-  delete reinterpret_cast<std::vector<std::pair<double, double>> *>(taskDataSeq->inputs[1]);
-  delete reinterpret_cast<std::vector<int> *>(taskDataSeq->inputs[2]);
 }
 
 TEST(fedorets_i_simpson_seq, Func_2) {
@@ -68,11 +64,11 @@ TEST(fedorets_i_simpson_seq, Func_2) {
 
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
 
   taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(out.data()));
@@ -85,10 +81,6 @@ TEST(fedorets_i_simpson_seq, Func_2) {
   taskSequential.run();
   taskSequential.post_processing();
   ASSERT_NEAR(203.7, out[0], 0.1);
-
-  delete reinterpret_cast<std::function<double(std::vector<double>)> *>(taskDataSeq->inputs[0]);
-  delete reinterpret_cast<std::vector<std::pair<double, double>> *>(taskDataSeq->inputs[1]);
-  delete reinterpret_cast<std::vector<int> *>(taskDataSeq->inputs[2]);
 }
 
 TEST(fedorets_i_simpson_seq, Func_3) {
@@ -111,11 +103,11 @@ TEST(fedorets_i_simpson_seq, Func_3) {
 
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
 
   taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(out.data()));
@@ -128,10 +120,6 @@ TEST(fedorets_i_simpson_seq, Func_3) {
   taskSequential.run();
   taskSequential.post_processing();
   ASSERT_NEAR(283.5, out[0], 0.1);
-
-  delete reinterpret_cast<std::function<double(std::vector<double>)> *>(taskDataSeq->inputs[0]);
-  delete reinterpret_cast<std::vector<std::pair<double, double>> *>(taskDataSeq->inputs[1]);
-  delete reinterpret_cast<std::vector<int> *>(taskDataSeq->inputs[2]);
 }
 
 TEST(fedorets_i_simpson_seq, Func_4) {
@@ -154,11 +142,11 @@ TEST(fedorets_i_simpson_seq, Func_4) {
 
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
 
   taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(out.data()));
@@ -171,10 +159,6 @@ TEST(fedorets_i_simpson_seq, Func_4) {
   taskSequential.run();
   taskSequential.post_processing();
   ASSERT_NEAR(111816.7, out[0], 0.1);
-
-  delete reinterpret_cast<std::function<double(std::vector<double>)> *>(taskDataSeq->inputs[0]);
-  delete reinterpret_cast<std::vector<std::pair<double, double>> *>(taskDataSeq->inputs[1]);
-  delete reinterpret_cast<std::vector<int> *>(taskDataSeq->inputs[2]);
 }
 
 TEST(fedorets_i_simpson_seq, Func_5) {
@@ -197,11 +181,11 @@ TEST(fedorets_i_simpson_seq, Func_5) {
 
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(funcPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(limPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.release()));
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(nPtr.get()));
   taskDataSeq->inputs_count.emplace_back(1);
 
   taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(out.data()));
@@ -214,8 +198,4 @@ TEST(fedorets_i_simpson_seq, Func_5) {
   taskSequential.run();
   taskSequential.post_processing();
   ASSERT_NEAR(287147.7, out[0], 0.1);
-
-  delete reinterpret_cast<std::function<double(std::vector<double>)> *>(taskDataSeq->inputs[0]);
-  delete reinterpret_cast<std::vector<std::pair<double, double>> *>(taskDataSeq->inputs[1]);
-  delete reinterpret_cast<std::vector<int> *>(taskDataSeq->inputs[2]);
 }

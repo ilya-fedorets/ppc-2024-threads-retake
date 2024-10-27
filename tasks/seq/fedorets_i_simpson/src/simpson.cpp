@@ -62,8 +62,7 @@ bool fedorets_i_simpson_seq::SimpsonSequential::validation() {
   internal_order_test();
   // Check count elements of output
   // return taskData->inputs_count[0] == 1 && taskData->outputs_count[0] == 1;
-  return f != nullptr && limits != nullptr && n != nullptr;
-  return true;
+  return taskData->inputs_count.size() == 3 && taskData->outputs_count.size() == 1;
 }
 
 bool fedorets_i_simpson_seq::SimpsonSequential::run() {

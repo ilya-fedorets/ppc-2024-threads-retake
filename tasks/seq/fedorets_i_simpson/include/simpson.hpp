@@ -24,9 +24,9 @@ class SimpsonSequential : public ppc::core::Task {
   bool post_processing() override;
 
  private:
-  std::function<double(std::vector<double>)>* f;
-  std::vector<std::pair<double, double>>* limits;
-  std::vector<int>* n;
+  std::function<double(std::vector<double>)>* f = nullptr;
+  std::vector<std::pair<double, double>>* limits = nullptr;
+  std::vector<int>* n = nullptr;
   double res{};
 };
 
